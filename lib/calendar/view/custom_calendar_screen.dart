@@ -35,7 +35,7 @@ class _CustomCalendarScreenState extends State<CustomCalendarScreen> {
     List<DateTime> days = [];
     for (DateTime d = firstToDisplay;
         d.isBefore(lastToDisplay);
-        d = d.add(Duration(days: 1))) {
+        d = d.add(const Duration(days: 1))) {
       days.add(d);
     }
     return days;
@@ -47,7 +47,7 @@ class _CustomCalendarScreenState extends State<CustomCalendarScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Custom Calendar'),
+        title: const Text('Custom Calendar'),
       ),
       body: Column(
         children: <Widget>[
@@ -84,15 +84,15 @@ class CalendarHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         IconButton(
-          icon: Icon(Icons.arrow_back_ios),
+          icon: const Icon(Icons.arrow_back_ios),
           onPressed: onPreviousMonth,
         ),
         Text(
           DateFormat('yyyy년 MM월').format(currentDate),
-          style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
         ),
         IconButton(
-          icon: Icon(Icons.arrow_forward_ios),
+          icon: const Icon(Icons.arrow_forward_ios),
           onPressed: onNextMonth,
         ),
       ],
@@ -111,7 +111,7 @@ class CalendarGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 7,
       ),
       itemCount: daysInMonth.length,
@@ -133,7 +133,7 @@ class DayTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(2.0),
+      margin: const EdgeInsets.all(2.0),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
         borderRadius: BorderRadius.circular(4.0),
