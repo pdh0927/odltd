@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:odltd/calendar/view/custom_calendar_screen.dart';
 import 'package:odltd/common/const/colors.dart';
 import 'package:odltd/common/layout/default_layout.dart';
 import 'package:odltd/common/provider/root_tab_index_provider.dart';
@@ -64,7 +65,7 @@ class _RootTabState extends ConsumerState<RootTab>
           controller: controller,
           children: const [
             Center(child: Text('Home')),
-            Center(child: Text('Calendar')),
+            CustomCalendarScreen(),
             Center(child: Text('My')),
           ]),
     );
