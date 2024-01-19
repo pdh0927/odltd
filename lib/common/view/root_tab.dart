@@ -53,19 +53,19 @@ class _RootTabState extends ConsumerState<RootTab>
           currentIndex: ref.watch(rootTabIndexProvider),
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.check_box_outlined), label: 'TO-DO'),
+                icon: Icon(Icons.check_box_outlined), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month_outlined), label: 'Calendar'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.track_changes_outlined), label: '1=3'),
+                icon: Icon(Icons.track_changes_outlined), label: 'My'),
           ]),
       child: TabBarView(
           physics: const NeverScrollableScrollPhysics(), // scroll로는 화면 전환 x
           controller: controller,
           children: const [
-            Center(child: Text('TO-DO')),
+            Center(child: Text('Home')),
             Center(child: Text('Calendar')),
-            Center(child: Text('1=3')),
+            Center(child: Text('My')),
           ]),
     );
   }
