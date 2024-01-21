@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:odltd/calendar/view/custom_calendar_screen.dart';
 import 'package:odltd/common/const/colors.dart';
 import 'package:odltd/common/layout/default_layout.dart';
 import 'package:odltd/common/provider/root_tab_index_provider.dart';
@@ -53,19 +54,19 @@ class _RootTabState extends ConsumerState<RootTab>
           currentIndex: ref.watch(rootTabIndexProvider),
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.check_box_outlined), label: 'TO-DO'),
+                icon: Icon(Icons.home_outlined), label: 'Home'),
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_month_outlined), label: 'Calendar'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.track_changes_outlined), label: '1=3'),
+                icon: Icon(Icons.account_circle_outlined), label: 'My'),
           ]),
       child: TabBarView(
           physics: const NeverScrollableScrollPhysics(), // scroll로는 화면 전환 x
           controller: controller,
           children: const [
-            Center(child: Text('TO-DO')),
-            Center(child: Text('Calendar')),
-            Center(child: Text('1=3')),
+            Center(child: Text('Home')),
+            CustomCalendarScreen(),
+            Center(child: Text('My')),
           ]),
     );
   }
